@@ -1,6 +1,6 @@
 {
   "name": "next-in-sequence",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Given an array and an input string, find a the sequence surrounds the input string, and its next iteration",
   "main": "./lib/index.js",
   "scripts": {

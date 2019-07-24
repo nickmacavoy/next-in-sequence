@@ -1,9 +1,10 @@
 import { assert, expect } from 'chai';
 import NextInSequence from '../src';
 
-const subject = (expectedString, expectedTestString) => {
-  return new NextInSequence(expectedString, expectedTestString);
-};
+const subject = (expectedString, expectedTestString) => new NextInSequence(
+  expectedString,
+  expectedTestString
+);
 
 describe('Constructor', () => {
   it('should save arguments', () => {
@@ -31,9 +32,9 @@ describe('execute', () => {
     const input = Number.MAX_SAFE_INTEGER.toString();
     const testStrings = [Number.MAX_SAFE_INTEGER.toString()];
     const { proposal, min, max } = subject(input, testStrings);
-    assert(proposal == Number.MAX_SAFE_INTEGER + 1, `Cant handle bigint ${proposal}`);
-    assert(min == Number.MAX_SAFE_INTEGER);
-    assert(max == Number.MAX_SAFE_INTEGER);
+    assert(proposal === (Number.MAX_SAFE_INTEGER + 1).toString(), `Cant handle bigint ${proposal}`);
+    assert(min === (Number.MAX_SAFE_INTEGER).toString());
+    assert(max === (Number.MAX_SAFE_INTEGER).toString());
   });
 
   it('should handle no numbers', () => {

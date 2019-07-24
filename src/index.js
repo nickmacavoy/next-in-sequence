@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+
 class NextInSequence {
   constructor(input, testStrings) {
     this.string = input;
@@ -35,9 +37,12 @@ class NextInSequence {
     let foundSequence;
     let test;
     const regex = /\d+/g;
+
+    // eslint-disable-next-line no-cond-assign
     while ((test = regex.exec(string)) !== null) {
       foundSequence = test;
     }
+
     foundSequence = parseInt(foundSequence, 10);
     const index = string.lastIndexOf(foundSequence);
     return {
