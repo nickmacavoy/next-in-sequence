@@ -82,8 +82,8 @@ describe('execute', () => {
     assert(max === undefined);
   });
 
-  it('should handle a many testStrings', () => {
-    const length = 30000;
+  it('should handle many testStrings', () => {
+    const length = 10000;
     const input = 'frank2';
     const testStrings = [
       ...[...Array(length)].map((x, i) => `frank${i}`),
