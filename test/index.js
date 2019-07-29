@@ -95,7 +95,7 @@ describe('execute', () => {
     assert(max === `frank${length - 1}`, max);
   });
 
-  it('should handle a many duplicate strings', () => {
+  it('should handle many duplicate strings', () => {
     const input = 'frank2';
     const testStrings = ['frank1', 'frank1', 'frank1', 'frank2', 'frank2', 'frank3'];
     const { proposal, min, max } = subject(input, testStrings);
