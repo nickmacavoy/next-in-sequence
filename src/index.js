@@ -1,6 +1,8 @@
 /* eslint-disable no-underscore-dangle */
 
-class NextInSequence {
+const defaultReturn = {};
+
+export default class NextInSequence {
   constructor(input, testStrings) {
     this.string = input;
     this.testStrings = testStrings;
@@ -8,8 +10,8 @@ class NextInSequence {
   }
 
   execute() {
-    if (!this.match()) return false;
-    if (!this.canSequence()) return false;
+    if (!this.match()) return defaultReturn;
+    if (!this.canSequence()) return defaultReturn;
 
     const { prefix, sequenceStart } = NextInSequence.digitsToSequence(this.stringSanitised());
     let max = sequenceStart;
@@ -80,10 +82,7 @@ class NextInSequence {
   }
 
   valid() {
-    if (this.testStringsSanitised().length === 0) return false;
-    if (this.stringSanitised().length === 0) return false;
-    return true;
+    return this.testStringsSanitised().length !== 0
+      && this.stringSanitised().length !== 0;
   }
 }
-
-export default NextInSequence;

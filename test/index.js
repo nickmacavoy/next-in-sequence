@@ -1,22 +1,10 @@
-import { assert, expect } from 'chai';
+import { assert } from 'chai';
 import NextInSequence from '../src';
 
 const subject = (expectedString, expectedTestString) => new NextInSequence(
   expectedString,
   expectedTestString
 );
-
-describe('Constructor', () => {
-  it('should save arguments', () => {
-    const expectedString = 'Input string';
-    const expectedTestString = ['Input string', 'Input string #2'];
-    const test = subject(expectedString, expectedTestString);
-    assert(test.string === expectedString, 'string not set');
-    assert(test.testStrings === expectedTestString, 'testStrings not set');
-    // assert(isA(subject.testStrings) === Array, 'testStrings not set');
-    expect(test.testStrings).to.be.an('array');
-  });
-});
 
 describe('execute', () => {
   it('should produce expected result', () => {
